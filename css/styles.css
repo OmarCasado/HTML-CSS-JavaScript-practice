@@ -1,0 +1,1044 @@
+/************************ GENERAL STYLES ************************/
+
+/* 各要素のボックスモデルの計算にpaddingとborderの寸法を含めるためのプロパティ。*/
+/*すべてのtransitionsの速度を落とす。*/
+* {
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+  transition: 0.2s ease-in;
+}
+
+/*内部リンクへの移動をスムーズにする。*/
+html {
+  scroll-behavior: smooth;
+  font-size: 100%;
+}
+
+/* bodyのmargin余白を削除する。*/
+body {
+  margin: 0;
+  background-color: var(--dark-gray);
+}
+
+/* ulリストのディスクを削除する。*/
+ul {
+  list-style-type: none;
+}
+
+/*すべてのaタグの文字の下線を削除する。*/
+a {
+  text-decoration: none;
+}
+
+/*全体的に使う色合いをまとめる。*/
+:root {
+  --white: rgb(240, 240, 240);
+  --red: rgb(188, 0, 45);
+  --light-gray: rgb(124, 130, 138);
+  --light-transparent-white: rgba(255, 255, 255, 0.5);
+  --dark-gray: rgb(56, 58, 59);
+  --background-color: rgb(240, 240, 232);
+  --green: rgb(52, 158, 91);
+}
+
+/* img {
+  max-width: 100%;
+} */
+
+
+/************************ HEADER AND NAVIGATION BAR ************************/
+
+/*　ロゴとブランド名を横並びにする。*/
+#brand_wrapper {
+  display: flex;
+  padding: 0 10px 0 10px;
+  width: 26rem;
+  max-width: 100vw;
+  justify-content: center;
+}
+
+/*Header全体のスタイル。*/
+/*ページをスクロールしても header が付いてきてくれるためのプロパティ。*/
+/*スクロールするときにAsideが上に被らないようにz-indexを1と指定する。*/
+header {
+  display: flex;
+  justify-content: space-between;
+  height: 70px;
+  background-color: var(--dark-gray);
+  position: fixed;
+  width: 100%;
+  z-index: 9;
+}
+
+/*ロゴの設定。スケールを下げる。*/
+/*ロゴの色を反転する*/
+header img {
+  scale: 1.1;
+  max-width: 100%;
+  height: auto;
+}
+
+header img:hover {
+  scale: 0.9;
+}
+
+header h1 {
+  color: var(--white);
+  text-shadow: 1px 1px black;
+  /* line-height: 70px; */
+}
+
+header h1:hover {
+  color: var(--green);
+}
+
+header h1 span {
+  color: var(--red);
+}
+
+/*ナヴィゲーション・バ－のリスト要素を横並びにする。*/
+#top_nav ul {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 0;
+  padding: 0;
+}
+
+/*ナヴィゲーション・バ－の要素を整理し、中央に合わせる。*/
+#top_nav li {
+  padding: 0 25px 0 25px;
+  line-height: 70px;
+}
+
+#top_nav li a {
+  color: var(--white);
+}
+
+#top_nav li a:hover {
+  color: var(--green);
+}
+
+/************************ MAIN SECTION ************************/
+
+#main {
+  height: 100vh;
+  /*Mainセクションの高さをヴュ－ポ－トの全体に合わせる。*/
+  /* background-image: url("/images/own/road.jpg"); */
+  /*コメントアウトされている部分は最初案で、動画に変更した。*/
+  /* background-position: center; */
+  /* background-size: cover; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+/* pricesセクションのタイトル画面。 */
+#prices_contact_main {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 125px;
+  background-image: url("../images/own/road3.png");
+  background-position: center;
+  background-position-y: bottom;
+  background-size: cover;
+}
+
+/* pricesセクションの手－ブル等のまとめ */
+#prices_section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-bottom: 150px;
+}
+
+.prices_table,
+th,
+td {
+  border: 1px solid var(--dark-gray);
+  border-collapse: collapse;
+  padding: 10px;
+  text-align: center;
+}
+
+th {
+  background-color: var(--green);
+  color: var(--white);
+}
+
+.prices_table tr:nth-of-type(odd) {
+  background-color: var(--light-transparent-white);
+}
+
+.table_wrapper {
+  margin: 0 auto 100px auto;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.table_wrapper h3 {
+  position: absolute;
+  top: -40px;
+  left: 0;
+}
+
+.table_wrapper p {
+  position: absolute;
+  bottom: -70px;
+  left: 0;
+}
+
+.prices_table {
+  width: 100%;
+}
+
+#notes {
+  color: var(--red);
+  margin: 0 auto;
+}
+
+#notes ul li a {
+  color: var(--light-gray);
+}
+
+#notes ul li a:hover {
+  color: var(--green);
+}
+
+
+/* pricesやindex.html以外のページの背景に使う。 */
+.white_background {
+  background-color: var(--white);
+}
+
+/* routes.html以外のページの背景に使う。 */
+.dark_background {
+  background-image: url("../images/o-dan/o-dan_roadline.jpg");
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+/*動画を背景として設定するために、positionをabsoluteにする。*/
+/*タイトルの下に動画が来るように、そのindex数字を-1とする。*/
+#background_video {
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+}
+
+#background_video video {
+  width: 100%;
+  /* filter: saturate(99%); */
+}
+
+/* タイトル、パラグラフと背景動画を含むMain セクション。*/
+#main_info {
+  color: var(--white);
+}
+
+/* すべてのタイトル。*/
+h2 {
+  margin: 0;
+  font-size: 3rem;
+  text-shadow: 2px 2px 2px var(--dark-gray);
+}
+
+#prices_contact_info h2 {
+  margin-top: 200px;
+}
+
+#prices_contact_info p {
+  margin-bottom: 50px;
+}
+
+
+#main_info p {
+  font-size: 1rem;
+}
+
+/*main セクションの予約ボタン*/
+#main_info a {
+  display: block;
+  text-decoration: none;
+  color: var(--white);
+  background-color: var(--red);
+  width: 100px;
+  padding: 10px;
+  border-radius: 10px;
+  margin: 0 auto;
+}
+
+#main_info a:hover {
+  background-color: var(--green);
+  box-shadow: 3px 3px 5px var(--dark-gray);
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid var(--dark-gray);
+  width: 40%;
+  margin: 0 auto;
+  padding: 10px;
+  border-radius: 25px;
+  box-shadow: 5px 5px 6px var(--light-gray);
+}
+
+.typed_input {
+  line-height: 1.5rem;
+}
+
+input {
+  margin-bottom: 10px;
+  border-radius: 5px;
+  border: 1px solid var(--dark-gray);
+}
+
+label {
+  margin-bottom: 10px;
+}
+
+.input_wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: left;
+  width: 90%;
+}
+
+textarea {
+  resize: none;
+}
+
+#send_button {
+  margin: 10px;
+  text-transform: uppercase;
+  background-color: var(--red);
+  color: var(--white);
+  width: 100px;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+#send_button:hover {
+  background-color: var(--green);
+  box-shadow: 3px 3px 5px var(--dark-gray) inset;
+}
+
+#contact_section {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 50px;
+}
+
+#contact_notes {
+  width: 40%;
+}
+
+#contact_notes ul {
+  padding: 0;
+}
+
+#contact_notes ul li {
+  margin-bottom: 10px;
+}
+
+#contact_notes ul li a {
+  color: var(--green);
+}
+
+
+#map_container {
+  width: 80%;
+  height: 50%;
+  border: 1px solid var(--light-gray);
+}
+
+#routes_section {
+  position: relative;
+  height: 100vh;
+}
+
+/* tour 1～ tour 5まではroutesのページのツアーカ－ドのまとめ。 */
+#tour1 {
+  position: absolute;
+  top: 0;
+  width: 90%;
+  height: 40%;
+  background-image: url("../images/own/road9.jpg");
+  background-position: center;
+  background-size: cover;
+  text-align: center;
+}
+
+#tour1 h2 {
+  position: absolute;
+  bottom: 0;
+  text-shadow: none;
+}
+
+#tour2 {
+  position: absolute;
+  top: 45%;
+  right: 0;
+  width: 90%;
+  height: 40%;
+  background-image: url("../images/own/road5.JPG");
+  background-position: center;
+  background-size: cover;
+}
+
+#tour2 h2 {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  text-shadow: none;
+}
+
+#tour3 {
+  position: absolute;
+  top: 90%;
+  width: 90%;
+  height: 40%;
+  background-image: url("../images/own/road7.jpg");
+  background-position: center;
+  background-size: cover;
+}
+
+#tour3 h2 {
+  position: absolute;
+  bottom: 0;
+  text-shadow: none;
+}
+
+#tour4 {
+  position: absolute;
+  top: 135%;
+  right: 0;
+  width: 90%;
+  height: 40%;
+  background-image: url("../images/o-dan/o-dan_shizuoka.jpg");
+  background-position: center;
+  background-size: cover;
+}
+
+#tour4 h2 {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  text-shadow: none;
+}
+
+#tour5 {
+  position: absolute;
+  top: 180%;
+  width: 90%;
+  height: 40%;
+  background-image: url("../images/own/road4.JPG");
+  background-position: center;
+  background-size: cover;
+}
+
+#tour5 h2 {
+  position: absolute;
+  bottom: 0;
+  text-shadow: none;
+}
+
+#routes_section a:hover {
+  width: 95%;
+  border: 3px solid var(--white);
+}
+
+#routes_section a h2 {
+  color: white;
+  font-size: 3rem;
+  text-shadow: 2px 2px 2px var(--dark-gray);
+}
+
+/* routesのページの紹介セクション */
+#tours_main {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 50px;
+  background-image: url("../images/own/road10.jpg");
+  background-position: center;
+  background-position-y: bottom;
+  background-size: cover;
+  color: white;
+}
+
+#tours_main p {
+  text-shadow: 2px 2px 2px var(--dark-gray);
+}
+
+/************************ ASIDE ************************/
+
+/*absoluteにして、html全体に対して配置します。absoluteは要素をファイルの自然な流れ*/
+aside {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 20%;
+  position: absolute;
+  top: 150px;
+  background-color: rgba(255, 255, 255, 0.5);
+  padding: 10px;
+  margin: 0 0 0 10px;
+  text-align: center;
+  border-radius: 50px;
+}
+
+/*Newsタイトル*/
+h3 {
+  margin: 0;
+  padding: 0;
+}
+
+aside img {
+  width: 100%
+}
+
+/*pをイメージの上にできるようにliをrelativeにする。*/
+aside li {
+  position: relative;
+}
+
+/*pをイメージに対して位置を調整できるようにpositionをabsoluteにする。*/
+/* 画像の幅の100%に広げられるようにblockにする。 */
+aside a p {
+  position: absolute;
+  color: var(--white);
+  background-color: var(--green);
+  z-index: 2;
+  margin: 0;
+  bottom: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  padding: 1%;
+}
+
+/* flexにすることでその中のpとimgの中心をそろえる */
+aside a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+aside img {
+  filter: saturate(0%);
+}
+
+aside img:hover {
+  box-shadow: 3px 3px 5px var(--dark-gray);
+  filter: saturate(100%);
+  z-index: 3;
+  border: 2px solid var(--green);
+  transition: 0.1s;
+}
+
+aside ul {
+  margin: 0;
+  padding: 10px;
+}
+
+aside li {
+  margin-bottom: 10px;
+}
+
+/************************ NEW MODELS SECTION ************************/
+
+/*最新モデルセクション全体。*/
+#new_models {
+  text-align: center;
+  background-color: var(--dark-gray);
+  color: white;
+  height: 100vh;
+}
+
+/*Ride our New Modelsタイトル。*/
+#new_models h2 {
+  padding-top: 50px;
+  margin-bottom: 50px;
+}
+
+/*article 3つをまとめて、横並びにする。*/
+#article_wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+#article_wrapper article {
+  border: 1px solid var(--light-gray);
+  border-radius: 25px;
+  margin: 0 30px 0 30px;
+  width: 350px;
+  height: 420px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(var(--light-gray) 0%, var(--dark-gray) 75%);
+}
+
+/*各articleのイメージをそのarticleのサイズの100％に設定する。*/
+#article_wrapper a img {
+  width: 370px;
+}
+
+#article_wrapper a img:hover {
+  scale: 1.3;
+}
+
+article h3 {
+  text-align: left;
+  margin-left: 10px;
+  margin-bottom: 10px;
+}
+
+article p {
+  margin: 0;
+}
+
+article .reserve_button {
+  display: block;
+  text-decoration: none;
+  color: var(--white);
+  background-color: var(--red);
+  width: 100px;
+  padding: 10px;
+  border-radius: 10px;
+  margin: 0;
+  margin: 10px auto;
+  left: 50%;
+
+}
+
+/*inset と書いて影を内側に反映する。*/
+article .reserve_button:hover {
+  background-color: var(--green);
+  box-shadow: 3px 3px 5px var(--dark-gray) inset;
+}
+
+
+
+/************************ ABOUT SECTION ************************/
+
+
+/* About タイトル。*/
+#about h2 {
+  color: var(--white);
+  padding-top: 100px;
+  text-align: center;
+  padding-bottom: 20px;
+}
+
+/*バリューのimgsを横並びにする。*/
+#about_wrapper {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 100vh;
+  width: 90%;
+  color: var(--white);
+  margin: 0 auto;
+}
+
+#about_card1 {
+  width: 35%;
+  height: 70%;
+  overflow: overlay;
+  background-color: var(--dark-gray);
+  border-radius: 10px;
+  box-shadow: 5px 5px 6px var(--light-gray);
+  border: 1px solid var(--dark-gray);
+  text-align: left;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+#about_card2 {
+  width: 60%;
+  height: 550px;
+  border-radius: 10px;
+  animation: about_image 20s infinite alternate;
+  box-shadow: 5px 5px 6px var(--light-gray);
+  border: 1px solid var(--dark-gray);
+}
+
+/* イメージのtransitionを作る */
+@keyframes about_image {
+  0% {
+    background-image: url("../images/o-dan/o-dan_faraway.jpg");
+    background-position: center;
+    background-size: cover;
+  }
+
+  50% {
+    background-image: url("../images/o-dan/o-dan_discover.jpg");
+    background-position: center;
+    background-size: cover;
+  }
+
+  100% {
+    background-image: url("../images/o-dan/o-dan_mix.jpg");
+    background-position: center;
+    background-size: cover;
+  }
+}
+
+
+/************************ FOOTER ************************/
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--dark-gray);
+  height: 70px;
+}
+
+footer small {
+  margin-left: 20px;
+  color: var(--white);
+}
+
+/*最初に戻るためのボタン*/
+#goback {
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  background-color: var(--red);
+  border-radius: 30px;
+  margin-right: 20px;
+}
+
+#goback i {
+  color: var(--white);
+}
+
+#goback:hover {
+  background-color: var(--green);
+  box-shadow: 3px 3px 5px var(--dark-gray) inset;
+}
+
+#media_icons {
+  margin-right: 20px;
+}
+
+#media_icons h4 {
+  color: var(--white);
+  text-align: center;
+  margin: 0;
+  margin-top: 10px;
+}
+
+#media_icons img {
+  width: 25px;
+  filter: invert();
+  margin: 7px 10px 5px 10px;
+}
+
+#media_icons img:hover {
+  scale: 1.5;
+}
+
+#routes_footer {
+  position: absolute;
+  bottom: -195%;
+  width: 100%;
+  border-top: 1px solid var(--white);
+}
+
+/************************ MEDIA QUERIES ************************/
+
+@media (max-width: 1300px) {
+
+  header li {
+    font-size: 0.9rem;
+  }
+
+  h2 {
+    font-size: 2.5rem;
+  }
+
+  #main_info p {
+    font-size: 0.9rem;
+  }
+
+  #article_wrapper article {
+    margin: 0 5px 0 5px;
+    width: 300px;
+  }
+
+  /*各articleのイメージをそのarticleのサイズの100％に設定する。*/
+  #article_wrapper a img {
+    width: 320px;
+  }
+
+  #article_wrapper a img:hover {
+    width: 400px;
+  }
+}
+
+@media (max-width: 1100px) {
+
+  h2 {
+    font-size: 2rem;
+  }
+
+  #main_info p {
+    font-size: 0.7rem;
+  }
+
+  h1 {
+    font-size: 1.7rem;
+  }
+}
+
+@media (max-width: 960px) {
+
+  h1 {
+    font-size: 1.4rem;
+  }
+
+  /*ロゴの設定。スケールを下げる。*/
+  header img {
+    scale: 0.7;
+  }
+
+  #routes_footer {
+    bottom: -200%;
+  }
+
+}
+
+
+@media (max-width: 900px) {
+
+  .road_background {
+    background-image: url("../images/o-dan/o-dan_roadline.jpg");
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+  }
+
+  #background_video {
+    display: none;
+  }
+
+  #main {
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+    animation: main_image 10s infinite both alternate;
+  }
+
+  /* イメージのtransitionを作る */
+  @keyframes main_image {
+    0% {
+      background-image: url("../images/o-dan/o-dan_transition2.jpg");
+    }
+
+    50% {
+      background-image: url("../images/o-dan/o-dan_transition1.jpg");
+    }
+
+    100% {
+      background-image: url("../images/o-dan/o-dan_transition3.jpg");
+    }
+  }
+
+  /*　ロゴとブランド名を横並びにする。*/
+  #brand_wrapper {
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+    align-items: center;
+  }
+
+  /*ナヴィゲーション・バ－の色を透明にする。*/
+  header {
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+    position: absolute;
+  }
+
+  header h1 {
+    color: var(--dark-gray);
+    font-size: 1.8rem;
+  }
+
+  #top_nav li {
+    padding: 0 10px 0 10px;
+    line-height: 0;
+  }
+
+  #top_nav li a {
+    color: var(--dark-gray);
+  }
+
+
+  #brand_wrapper img {
+    filter: none;
+    width: 25%;
+    height: auto;
+    scale: 0.7;
+  }
+
+  /*main infoを動画の後に配置できるようにポジションをabsoluteに変更。*/
+  #main_info {
+    position: absolute;
+    display: block;
+    background-color: var(--light-transparent-white);
+    color: var(--dark-gray);
+    margin: 0;
+    margin: 20px;
+    padding: 10px;
+    border-radius: 20px;
+  }
+
+  /* すべてのタイトル。*/
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  /*positionをrelativeにして、位置を調整する。*/
+  aside {
+    position: relative;
+    width: 100%;
+    border-radius: 0;
+    padding: 10px;
+    margin: 0;
+    top: -10px;
+    z-index: -1;
+    background-image: url("../images/o-dan/o-dan_roadline.jpg");
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+  }
+
+  aside h3 {
+    padding: 25px;
+    font-size: 1.5rem;
+    color: var(--white);
+  }
+
+  /*新しいモデルのセクション高さをautoに変更することで、立てにレイアウトし直したflexモデルに合わせる。*/
+  #new_models {
+    height: auto;
+    padding-bottom: 50px;
+  }
+
+  #article_wrapper {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #article_wrapper article {
+    margin-bottom: 20px;
+  }
+
+  #about_wrapper {
+    flex-direction: column;
+    height: auto;
+  }
+
+  #about_card {
+    margin: 0;
+  }
+
+  /*イメージを横歩行にスクロールできるための設定。*/
+  /* #about_wrapper {
+    overflow-x: scroll;
+    background-color: var(--light-transparent-white);
+  } */
+
+  .about_card p {
+    font-size: 1.2rem;
+    color: var(--dark-gray);
+  }
+
+  form {
+    width: 80%;
+  }
+
+  #contact_section {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 50px;
+  }
+
+  #contact_notes {
+    width: 80%;
+  }
+
+  #map_container {
+    width: 100%;
+    height: 60%;
+    border: 1px solid var(--light-gray);
+  }
+
+  form {
+    margin-bottom: 50px;
+  }
+
+  #routes_section a h2 {
+    font-size: 1.6rem;
+  }
+
+  /* routesページのh1とnav bar */
+  .routes_heading {
+    color: var(--white);
+  }
+
+  .routes_nav {
+    text-shadow: 2px 2px 0 var(--white);
+  }
+
+  #routes_footer {
+    bottom: -200%;
+  }
+
+  #about_wrapper {
+    flex-direction: column;
+  }
+
+  #about_card1 {
+    width: 90%;
+  }
+
+  #about_card2 {
+    width: 90%;
+    margin-bottom: 20px;
+  }
+
+  table {
+    font-size: 0.7rem;
+  }
+
+}
