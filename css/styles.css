@@ -118,6 +118,48 @@ header h1 span {
   color: var(--green);
 }
 
+#toggle-menu {
+  position: absolute; /*positionをabsoluteにすることで他の要素の流れに干渉せず好きな位置に配置できる。*/
+  top: 0.75rem;
+  right: 1rem;
+  display: none; /*displayをnoneにすることでdefaultで表示されない状態にする。media queriesの時に表示する。*/
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 20px;
+}
+
+#toggle-menu .line {
+  height: 3px;
+  width: 100%;
+  background-color: white;
+  border-radius: 10px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /************************ MAIN SECTION ************************/
 
 #main {
