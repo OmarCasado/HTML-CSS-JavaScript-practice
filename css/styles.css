@@ -120,7 +120,7 @@ header h1 span {
 
 #toggle-menu {
   position: absolute; /*positionをabsoluteにすることで他の要素の流れに干渉せず好きな位置に配置できる。*/
-  top: 0.75rem;
+  top: 1.2rem;
   right: 1rem;
   display: none; /*displayをnoneにすることでdefaultで表示されない状態にする。media queriesの時に表示する。*/
   flex-direction: column;
@@ -132,7 +132,7 @@ header h1 span {
 #toggle-menu .line {
   height: 3px;
   width: 100%;
-  background-color: white;
+  background-color: var(--white);
   border-radius: 10px;
 }
 
@@ -896,23 +896,15 @@ footer small {
 
   /*ナヴィゲーション・バ－の色を透明にする。*/
   header {
-    background-color: transparent;
     display: flex;
-    justify-content: center;
     align-content: center;
     flex-direction: column;
     position: absolute;
   }
 
   header h1 {
-    color: var(--dark-gray);
-    font-size: 1.8rem;
+    font-size: 1.5rem;
   }
-
-
-
-
-  
 
   #toggle-menu {
     display: flex;
@@ -920,33 +912,39 @@ footer small {
 
   #top_nav {
     display: none;
-    width: 100%;
     text-align: center;
+    background-color: var(--dark-gray);
+    width: 100%;
   }
 
   header {
     flex-direction: column;
     align-items: flex-start;
   }
-
+  
   #top_nav ul {
     flex-direction: column;
     width: 100%;
   }
 
-  #top_nav.show { /*Add a class that doesnt exist on html to toggle */
-    display: flex;
+  #top_nav ul li a {
+    display: block;
+    width: 100%;
   }
 
-  /* #top_nav li {
-    padding: 0 10px 0 10px;
-    line-height: 0;
-  } */
-/* 
-  #top_nav li a {
-    color: var(--dark-gray);
-  } */
+  #top_nav ul li {
+    padding: 0;
+    margin: 0;
+  }
 
+  #top_nav ul li a:hover {
+    background-color: var(--light-gray);
+    color: var(--dark-gray);
+  }
+
+  #top_nav.show { /*jsでtoggleを表示/非表示するためのクラス*/
+    display: flex;
+  }
 
   #brand_wrapper img {
     filter: none;
