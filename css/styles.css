@@ -136,30 +136,6 @@ header h1 span {
   border-radius: 10px;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /************************ MAIN SECTION ************************/
 
 #main {
@@ -933,14 +909,43 @@ footer small {
     font-size: 1.8rem;
   }
 
-  #top_nav li {
-    padding: 0 10px 0 10px;
-    line-height: 0;
+
+
+
+  
+
+  #toggle-menu {
+    display: flex;
   }
 
+  #top_nav {
+    display: none;
+    width: 100%;
+    text-align: center;
+  }
+
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  #top_nav ul {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  #top_nav.show { /*Add a class that doesnt exist on html to toggle */
+    display: flex;
+  }
+
+  /* #top_nav li {
+    padding: 0 10px 0 10px;
+    line-height: 0;
+  } */
+/* 
   #top_nav li a {
     color: var(--dark-gray);
-  }
+  } */
 
 
   #brand_wrapper img {
