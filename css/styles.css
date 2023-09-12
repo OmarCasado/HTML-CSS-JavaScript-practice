@@ -710,7 +710,7 @@ article .reserve_button:hover {
 }
 
 /* イメージのtransitionを作る */
-@keyframes about_image {
+/* @keyframes about_image {
   0% {
     background-image: url("../images/o-dan/o-dan_faraway.jpg");
     background-position: center;
@@ -729,7 +729,7 @@ article .reserve_button:hover {
     background-size: cover;
   }
 }
-
+ */
 
 /************************ FOOTER ************************/
 
@@ -1088,6 +1088,7 @@ footer small {
   #about_card2 {
     width: 90%;
     margin-bottom: 20px;
+    object-fit: cover;
   }
 
   table {
