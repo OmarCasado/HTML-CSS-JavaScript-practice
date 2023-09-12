@@ -130,11 +130,19 @@ header h1 span {
 }
 
 #toggle-menu .line {
-  height: 3px;
+  height: 4px;
   width: 100%;
-  background-color: var(--white);
-  border-radius: 10px;
+
+  background-color:var(--light-gray);
 }
+
+#toggle-menu .line:nth-of-type(2) {
+  background-color: white;
+  height: 2px;
+}
+
+
+
 
 /************************ MAIN SECTION ************************/
 
