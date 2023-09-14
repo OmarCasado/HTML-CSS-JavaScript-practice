@@ -14,10 +14,43 @@ toggleMenu.addEventListener("click", showMenu);
 //showというクラスをcssでdisplay flexにする
 function showMenu () {
   navbarLinks.classList.toggle("show");
-
 }
 
+const xmark = document.querySelector('#toggle-menu img');
+xmark.classList.add("x-markhidden");
+let flag = true;
+
+
+toggleMenu.onclick = function () {
+  if (flag === true) {
+    xmark.classList.remove("x-markhidden");
+    flag = false;
+  } else {
+    xmark.classList.add("x-markhidden");
+    flag = true;
+  }
+}
+
+
+// toggleMenu.onclick = function () {
+//   if (isAdd === true) {
+//     // pTag.classList.toggle('wahaha');だけでもいける、falseを追加しなくても
+//     xmark.classList.add('x-markhidden');
+//     isAdd = false;
+//   } else {
+//     // pTag.classList.toggle('wahaha');だけでもいける、trueを追加しなくても
+//     xmark.classList.remove('x-markhidden');
+//     isAdd = true;
+
+//   }
+// }
+
+
 /****************************************** TOGGLE MENU ABOVE ******************************************/
+
+
+
+/************************************* INDEX.HTML SLIDESHOW BELOW *************************************/
 
 // i という変数を0に設定する
 let i = 0;
@@ -51,20 +84,5 @@ function changeImage () {
 window.onload = changeImage;
 
 
-/************************************* INDEX.HTML SLIDESHOW BELOW *************************************/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /************************************* INDEX.HTML SLIDESHOW ABOVE *************************************/
+

@@ -72,7 +72,7 @@ header {
 
 /*ロゴの設定。スケールを下げる。*/
 /*ロゴの色を反転する*/
-header img {
+header img #brandLogo {
   scale: 1.1;
   max-width: 100%;
   height: auto;
@@ -142,6 +142,9 @@ header h1 span {
 }
 
 
+.x-markhidden {
+  display: none;
+}
 
 
 /************************ MAIN SECTION ************************/
